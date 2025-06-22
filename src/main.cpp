@@ -6,7 +6,7 @@
 int main(int argc, char* argv[]) {
     std::cout << "Hello, World!" << std::endl;
     std::cout << "And from libmylib.so: " << std::endl;
-    myprint("erm what the sigma");
+    myprint(std::string(argv[1]));
     // std::cout << " Is there anything you'd like to say? > ";
     // std::string response;
     // std::cin >> response;
