@@ -9,3 +9,5 @@ add_executable(hw main.cpp)
 target_include_directories(hw PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/mylibs)
 target_link_directories(hw PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/mylibs)
 target_link_libraries(hw PUBLIC mylib)
+
+install(TARGETS hw mylib)
