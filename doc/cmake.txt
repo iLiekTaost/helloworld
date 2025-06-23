@@ -2,9 +2,11 @@ Important cmake commands:
 
 **COMMANDS MUST BE RUN FROM build/**
 
-1. Configure: `$ cmake -r ..`
+You can add --trace to debug cmake
+
+1. Configure: `$ cmake -DCMAKE_BUILD_TYPE:STRING=Release ..`
 - You can also run `cmake --build build/` from project root
-2. Build: `$ cmake --build .`
+2. Build: `$ cmake --build -j 1 .`
 - You can also run `make`
 3. Install: `$ cmake --install .`
 - You can also run `cmake --install build` from project root
