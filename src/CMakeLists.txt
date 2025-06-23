@@ -1,8 +1,8 @@
-set(VERBOSE 1)
 cmake_minimum_required(VERSION 3.28)
+set(VERBOSE 1)
 
 # project settings
-project(hello_world)
+project(hello_world VERSION 1.0 DESCRIPTION "Hello World!" LANGUAGES CXX)
 message(STATUS "Build tree starts at: ${CMAKE_BINARY_DIR}")
 # release mode as default
 if(NOT CMAKE_BUILD_TYPE)
@@ -17,9 +17,9 @@ add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/mylibs)
 # main executable
 add_executable(hw main.cpp)
 # target compiles with a library built in this tree (from source)
-target_include_directories(hw PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/mylibs)
+target_include_directories(hw PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/mylibs)
 # target_link_directories(hw PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/mylibs)
 # looks like we can link lib w/o linking the directory
-target_link_libraries(hw PUBLIC mylib)
+target_link_libraries(hw PUBLIC mylib)  # TODO what if this is PRIVATE?
 
 install(TARGETS hw mylib)
