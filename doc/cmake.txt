@@ -1,0 +1,10 @@
+Important cmake commands:
+
+**COMMANDS MUST BE RUN FROM build/**
+
+1. Configure: `$ cmake -r ..`
+- You can also run `cmake --build build/` from project root
+2. Build: `$ cmake --build .`
+- You can also run `make`
+3. Install: `$ cmake --install .`
+- You can also run `cmake --install build` from project root
