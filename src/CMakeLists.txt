@@ -4,8 +4,9 @@ set(VERBOSE 1)
 # project settings
 project(hello_world VERSION 1.0 DESCRIPTION "Hello World!" LANGUAGES CXX)
 message(STATUS "Build tree starts at: ${CMAKE_BINARY_DIR}")
-# release mode as default
+# debug mode as default
 if(NOT CMAKE_BUILD_TYPE)
+    # environment variable superceeds
     set(CMAKE_BUILD_TYPE "Release" CACHE STRING "Choose the type of build." FORCE)
 endif()
 # build shared libs by default
